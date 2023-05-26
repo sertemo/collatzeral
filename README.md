@@ -11,3 +11,8 @@ Los nodos son únicos.
 ## 3 - Nodos aislados
 Muestra un gráfico de tipo histograma con el número de iteraciones de cada nodo aislado en el rango de números evaluado.
 Un nodo aislado es aquel que no tiene antecesor en el árbol de recorridos.
+
+## Próximas etapas
+- Añadir la parte de 'Nodos Aislados'
+- Mejorar el rendimiento de graphviz (si se puede)
+- Página nueva para ver una secuencia aislada ?
