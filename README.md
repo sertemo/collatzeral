@@ -16,3 +16,5 @@ Un nodo aislado es aquel que no tiene antecesor en el árbol de recorridos.
 - Añadir la parte de 'Nodos Aislados'
 - Mejorar el rendimiento de graphviz (si se puede)
 - Página nueva para ver una secuencia aislada ?
+
+Ir a la app [aquí](https://collatzeral.streamlit.app/).
