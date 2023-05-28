@@ -1,5 +1,6 @@
 ## COLLATZERAL
 Pequeña aplicación para evaluar un rango de número con la conjetura de Collatz y mostrar algunas gráficas.
+Ver la app [aquí](https://collatzeral.streamlit.app/)
 
 ## 1 - Gráficos
 Muestra una gráfica de dispersión donde cada punto representa el número de iteraciones necesarias para converger de un número.
