@@ -21,7 +21,7 @@ class Collatz:
 
   def _evaluar_rango(self,limite_max,yield_str=False):
     """ Función auxiliar para crear el generador de secuencias """
-    self._seqs = (self._generador(i,yield_str) for i in range(2,limite_max+1))
+    return (self._generador(i,yield_str) for i in range(2,limite_max+1))
   
   def printear_iteraciones_rango(self,limite_max,yield_str=False):
     self._evaluar_rango(limite_max,yield_str)
@@ -29,10 +29,10 @@ class Collatz:
       print(list(gen))
 
   def plotear_iteraciones(self,limite_max,color,marker,color_contorno,lw,yield_str=False):
-    self._evaluar_rango(limite_max,yield_str)
+    secuencias = self._evaluar_rango(limite_max,yield_str)
 
     x = range(2,limite_max+1)
-    y = (len(list(gn)) for gn in self._seqs)
+    y = (len(list(gn)) for gn in secuencias)
 
     fig, ax = plt.subplots()
     #plt.figure(figsize=(16,5),layout="constrained")
@@ -48,14 +48,33 @@ class Collatz:
     graph = graphviz.Digraph(format="png",strict=True)
 
     #Evaluamos el rango devolviendo strings
-    self._evaluar_rango(limite_max,True)
+    secuencias = self._evaluar_rango(limite_max,True)
 
     #Creamos los edges
-    for seq in self._seqs:
+    for seq in secuencias:
       seq_list = list(seq)
       for idx,numero in enumerate(seq_list[:-1]):
         graph.edge(numero,seq_list[idx+1])
     
     st.graphviz_chart(graph)
+  
+  def mostrar_nodos_aislados(self,limite_max)->dict:
+    nodos_aislados = {
+        "Nodos aislados" : [],
+        "iteraciones" : [],
+    }
+    for num in range(2,limite_max+1):
+      secuencias = self._evaluar_rango(limite_max=limite_max)
+      for gen in secuencias:
+        secuencia = list(gen)
+        if num in secuencia[1:]:
+          break
+        else:
+          if secuencia[0] != limite_max:
+            next
+          else:
+            nodos_aislados["Nodos aislados"].append(num)
+            nodos_aislados["iteraciones"].append(len(list(self._generador(num))))      
+    return nodos_aislados
 
  
