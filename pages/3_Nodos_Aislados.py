@@ -18,8 +18,8 @@ desc = "Muestra un gráfico de tipo histograma con el número de iteraciones de 
 f.set_sidebar(desc)
 
 
-st.title("Nodos aislados")
+st.title("Nodos aislados vs número de iteraciones")
 with st.spinner("Calculando..."):
-    pass
-st.info("EN DESARROLLO")
+    nodos_aislados = col.mostrar_nodos_aislados(num_evaluar)
+    st.bar_chart(data=nodos_aislados,x="Nodos aislados",y="iteraciones")
 
