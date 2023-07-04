@@ -8,7 +8,7 @@ num_evaluar = st.session_state.get("num_evaluar",10)
 
 #Configuración de la app
 st.set_page_config(
-    page_title="Gráficos de Collatz hasta el {num_evaluar}",   
+    page_title=f"Gráficos de Collatz hasta el {num_evaluar}",   
     page_icon="📈",
     layout="wide")
 
