@@ -1,5 +1,5 @@
 ## COLLATZERAL
-Pequeña aplicación para evaluar un rango de número con la conjetura de Collatz y mostrar algunas gráficas.
+Pequeña aplicación para evaluar un rango de número con la conjetura de Collatz y mostrar algunas gráficas.<br>
 Ver la app [aquí](https://collatzeral.streamlit.app/)
 
 ## 1 - Gráficos

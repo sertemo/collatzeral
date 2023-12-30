@@ -76,5 +76,3 @@ class Collatz:
             nodos_aislados["Nodos aislados"].append(num)
             nodos_aislados["iteraciones"].append(len(list(self._generador(num))))      
     return nodos_aislados
-
- 
