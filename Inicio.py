@@ -18,8 +18,8 @@ Sea la siguiente operación, aplicable a cualquier número entero positivo:
 Formalmente, esto equivale a una función:  """)
 st.latex(r""" f:\N \rarr \N""")
 st.latex(r"""f(n) = \begin{cases}
-   {n \over 2} &\text{si}~n~\text{par} \\
-   3n+1 &\text{si}~n~\text{impar}
+    {n \over 2} &\text{si}~n~\text{par} \\
+    3n+1 &\text{si}~n~\text{impar}
 \end{cases} """)
 st.markdown(""" 
 Ahora se forma una sucesión mediante la aplicación de esta operación repetidamente, comenzando por cualquier

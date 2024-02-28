@@ -2,6 +2,7 @@ import streamlit as st
 
 import graphviz
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 class Collatz:
   def _generador(self,num, yield_str:bool=False):
@@ -22,13 +23,15 @@ class Collatz:
   def _evaluar_rango(self,limite_max,yield_str=False):
     """ Función auxiliar para crear el generador de secuencias """
     return (self._generador(i,yield_str) for i in range(2,limite_max+1))
-  
+
+
   def printear_iteraciones_rango(self,limite_max,yield_str=False):
     self._evaluar_rango(limite_max,yield_str)
     for gen in self._seqs:
       print(list(gen))
 
-  def plotear_iteraciones(self,limite_max,color,marker,color_contorno,lw,yield_str=False):
+
+  def plotear_iteraciones(self, limite_max, yield_str=False):
     secuencias = self._evaluar_rango(limite_max,yield_str)
 
     x = range(2,limite_max+1)
@@ -40,8 +43,14 @@ class Collatz:
     plt.ylabel("Número de iteraciones para converger a 1")
     plt.title("Evaluación conjetura de Collatz")
 
-    ax.scatter(x,list(y),c=color,marker=marker,alpha=0.5,linewidths=lw,edgecolors=color_contorno)
-    st.pyplot(fig)
+    #ax.scatter(x,list(y),c=color,marker=marker,alpha=0.5,linewidths=lw,edgecolors=color_contorno)
+    #st.pyplot(fig)
+
+    px_fig = px.scatter(
+      x=x,
+      y=list(y),
+    ).update_layout(xaxis_title='Número', yaxis_title='Iteraciones', height=800)
+    st.plotly_chart(px_fig, use_container_width=True)
   
   def graficar_secuencias(self,limite_max):
     ''' Función para graficar las secuencias cuando evaluamos Collatz en un rango. '''
